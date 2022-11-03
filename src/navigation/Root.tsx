@@ -32,10 +32,14 @@ export default function Root() {
   const countryConfig = useCountryConfig();
   const auth = useAppSelector((state) => state.auth);
   return (
-    <Stack.Navigator>
+    <Stack.Navigator
+      screenOptions={{
+        headerShown: false,
+      }}
+    >
       {!auth.isOnboarded &&
         countryConfig.onboardingFlow.map((screen, index) => (
-          <Stack.Screen name={screen.name}>
+          <Stack.Screen name={screen.name} key={screen.name}>
             {() => {
               const Screen = screenNameToComponentMap[screen.name];
               const nextItem: OnboardingScreen | undefined =

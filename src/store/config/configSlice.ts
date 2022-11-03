@@ -9,7 +9,7 @@ export interface ConfigState {
 
 const initialState: ConfigState = {
   config,
-  currentCountry: Country.RO,
+  currentCountry: Country.UA,
 };
 
 export const configSlice = createSlice({
